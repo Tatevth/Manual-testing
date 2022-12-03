@@ -1,0 +1,210 @@
+{
+	"info": {
+		"_postman_id": "f4c9eb74-78fc-4afa-b610-69fd4e446d98",
+		"name": "Tatevcol",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "24293338"
+	},
+	"item": [
+		{
+			"name": "Login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"var res = JSON.parse(responseBody);\r",
+							"pm.globals.set(\"token\", res.token);\r",
+							"\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "basic",
+					"basic": [
+						{
+							"key": "password",
+							"value": "test5",
+							"type": "string"
+						},
+						{
+							"key": "username",
+							"value": "test5",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://qwallity.herokuapp.com/login/api",
+					"protocol": "https",
+					"host": [
+						"qwallity",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"login",
+						"api"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "User_courses",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qwallity.herokuapp.com/usercourses/api/1235067",
+					"protocol": "https",
+					"host": [
+						"qwallity",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"usercourses",
+						"api",
+						"1235067"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Course_price",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://qwallity.herokuapp.com/course_price/api/2233",
+					"protocol": "https",
+					"host": [
+						"qwallity",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"course_price",
+						"api",
+						"2233"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update_user_role",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"role_id\": \"1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://qwallity.herokuapp.com/user_role/test5",
+					"protocol": "https",
+					"host": [
+						"qwallity",
+						"herokuapp",
+						"com"
+					],
+					"path": [
+						"user_role",
+						"test5"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

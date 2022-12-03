@@ -1,0 +1,29 @@
+Title: All information about ticket isn't visible in 'Ticket History'.
+Platform: IPhone XR
+Operating System: IOS 16.0.2 (20A380)
+Application: EarlyOne 
+Version: 3.0.8
+
+Pre-Conditions: >Open App Store
+                            >Download 'EarlyOne' application on the device
+
+Steps to Reproduce:
+       1. Open earlyone app on the device 
+       2. Create a ticket (see notes)
+       3. Press 'Ticket History'
+        
+
+Expected Result: All information about ticket is shown in Ticket History.
+Actual Result: Some information about ticket isn't visible in Ticket History.
+
+Screenshot/video: -
+Notes: Steps how to create a ticket
+Press->1. Healthcare on home screen 
+            2. Vardanants MC
+            3. Select the Branch 
+            4. Select the Service
+            5. Select the Time
+            6. Create Ticket
+References: -
+
+Severity: Major
